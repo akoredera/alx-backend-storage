@@ -1,3 +1,8 @@
 //  script that inserts a document in the collection school
+var dbName = (process.argv.length > 2) ? process.argv[2] : 'default_db';
+
+// Connect to the specified database
+var db = connect('localhost:27017/' + dbName);
+
 db.createCollection("school")
 db.school.insertOne({name:  "Holberton school"})
